@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout - Multiple Views</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .view {
+            border: 2px solid #ddd;
+            padding: 10px;
+        }
+
+        .view h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .header, .feature, .signup, .content {
+            padding: 20px;
+            text-align: center;
+            background-color: lightblue;
+            border: 1px solid #ddd;
+        }
+
+        .feature {
+            background-color: #f28b82;
+        }
+
+        /* Feature 2 */
+        .features .feature:nth-child(2) {
+            background-color: #fbbc04;
+        }
+
+        /* Feature 3 */
+        .features .feature:nth-child(3) {
+            background-color: #34a853;
+        }
+
+        /* Desktop View */
+        .desktop-view .container {
+            flex-direction: column;
+        }
+
+        .desktop-view .features {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .desktop-view .features .feature {
+            flex: 1;
+            margin: 0 5px;
+        }
+
+        /* Tablet View */
+        .tablet-view .container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .tablet-view .header, .tablet-view .signup, .tablet-view .content {
+            flex: 1 1 100%;
+        }
+
+        .tablet-view .features {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1 1 50%;
+        }
+
+        .tablet-view .features .feature {
+            flex: 1 1 100%;
+            margin-bottom: 10px;
+        }
+
+        /* Phone View */
+        .phone-view .container {
+            flex-direction: column;
+        }
+
+        .phone-view .features {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .phone-view .features .feature {
+            margin: 10px 0;
+        }
+
+        /* Specific widths to represent device sizes */
+        .desktop-view {
+            width: 900px;
+        }
+
+        .tablet-view {
+            width: 768px;
+        }
+
+        .phone-view {
+            width: 375px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Desktop View -->
+    <div class="view desktop-view">
+        <h2>Desktop View</h2>
+        <div class="container">
+            <div class="header">HEADER</div>
+            <div class="features">
+                <div class="feature">FEATURE 1</div>
+                <div class="feature">FEATURE 2</div>
+                <div class="feature">FEATURE 3</div>
+            </div>
+            <div class="signup">SIGNUP</div>
+            <div class="content">CONTENT</div>
+        </div>
+    </div>
+
+    <!-- Tablet View -->
+    <div class="view tablet-view">
+        <h2>Tablet View</h2>
+        <div class="container">
+            <div class="header">HEADER</div>
+            <div class="content">CONTENT</div>
+            <div class="signup">SIGNUP</div>
+            <div class="features">
+                <div class="feature">FEATURE 1</div>
+                <div class="feature">FEATURE 2</div>
+                <div class="feature">FEATURE 3</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone View -->
+    <div class="view phone-view">
+        <h2>Phone View</h2>
+        <div class="container">
+            <div class="header">HEADER</div>
+            <div class="content">CONTENT</div>
+            <div class="signup">SIGNUP</div>
+            <div class="features">
+                <div class="feature">FEATURE 1</div>
+                <div class="feature">FEATURE 2</div>
+                <div class="feature">FEATURE 3</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
